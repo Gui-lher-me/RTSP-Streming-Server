@@ -25,8 +25,8 @@ Temporary Items
 .apdisk
 
 
-/client/node_modules
-/server/node_modules
+/node/node_modules
+/react/node_modules
 .flowconfig
 *~
 *.pyc

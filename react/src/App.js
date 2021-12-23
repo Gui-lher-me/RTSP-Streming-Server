@@ -17,14 +17,13 @@ export const App = () => {
 };
 
 // player.stop()
-
 let player;
 const RTSPPlayer = () => {
-    const playerRef = useRef(null);
+    const playerEl = useRef(null);
 
     useEffect(() => {
         player = new JSMpeg.VideoElement(
-            playerRef.current,
+            playerEl.current,
             'ws://localhost:8080/',
             {
                 autoplay: true,
@@ -34,11 +33,11 @@ const RTSPPlayer = () => {
         return () => {
             player.destroy();
         };
-    }, [player]);
+    }, []);
 
     return (
         <div>
-            <div style={{ height: '480px', width: '640px' }} ref={playerRef} />
+            <div style={{ height: '480px', width: '640px' }} ref={playerEl} />
             <button onClick={() => player.play()}>Play</button>
             <button onClick={() => player.pause()}>Pause</button>
         </div>
